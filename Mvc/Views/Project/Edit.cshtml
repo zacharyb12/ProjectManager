@@ -1,0 +1,17 @@
+@model Project
+
+<h1>Edit project</h1>
+
+<form asp-action="Edit" method="post">
+    <p>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"/>
+        <span asp-validation-for="Name"></span>
+    </p>
+    <p>
+        <label asp-for="Description"></label>
+        <input asp-for="Description"/>
+        <span asp-validation-for="Description"></span>
+    </p>
+    <button type="submit" name="Submit" value="Edit">Edit</button>
+</form>

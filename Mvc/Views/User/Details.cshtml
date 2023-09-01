@@ -1,0 +1,12 @@
+@model User?
+
+<h1>User Details</h1>
+
+<p>
+    <label asp-for="Id"></label>
+    @Html.DisplayFor(model => model!.Id)
+</p>
+<p>
+    <label asp-for="Name"></label>
+    @Html.DisplayFor(model => model!.Name)
+</p>

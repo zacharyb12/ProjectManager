@@ -1,0 +1,42 @@
+@model IEnumerable<TaskItem>
+
+@{
+    ViewData["Title"] = "Tasks";
+}
+
+<h1>Tasks</h1>
+<a asp-action="Create">Create</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (TaskItem task in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => task.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => task.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@task.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@task.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@task.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
